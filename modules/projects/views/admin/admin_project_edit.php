@@ -36,7 +36,12 @@ echo "<div>".form_textarea($data) ."</div></li>\n";
 
 echo "<li>".form_hidden('id',$records['id'])."</li>";
 echo "<li>".form_hidden('customer_id',$records['customer_id'])."</li>";
-echo "<li id=\"submitbtn\" >".form_submit('submit','Update Record')."</li></ul>\n";
+$submitdata = array(
+    'name'        => 'submit',
+    'class'          => 'submit',
+    'value'       => 'Update Record'
+    );
+echo "<li id=\"submitbtn\" >".form_submit($submitdata)."</li></ul>\n";
 echo form_close();
 
 

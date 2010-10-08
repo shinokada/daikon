@@ -35,7 +35,12 @@ echo "<div>".form_textarea($data) ."</div>\n</li>\n";
 
 $id = $this->uri->segment(4);
 echo "<li>".form_hidden('id',$id)."</li>\n";
-echo "<li id=\"submitbtn\" class=\"\">".form_submit('submit','Create New Project')."</li>\n</ul>\n";
+$submitdata = array(
+    'name'        => 'submit',
+    'class'          => 'submit',
+    'value'       => 'Create New Project'
+    );
+echo "<li id=\"submitbtn\" class=\"\">".form_submit($submitdata)."</li>\n</ul>\n";
 echo form_close()."\n";
 
 echo "<div class=\"clear\">&nbsp;</div>";

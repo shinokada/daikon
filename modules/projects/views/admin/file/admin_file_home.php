@@ -14,7 +14,6 @@ if ($this->session->flashdata('message')){
  * $customers returns user_id, company_name
  */
 
-
 echo "<h3 class=\"projectheading\">Company List</h3>";
 
 
@@ -56,7 +55,7 @@ if (count($projects)){
            // echo "<thead>\n<tr valign='top'>\n";
            // echo "<th class=\"left\" colspan=6 >".$companyname."</th>";
             //echo "</tr>";
-            echo "<tr><th class=\"left\" >Project Name</th>\n<th>Show Log</th>\n<th>Enter Log</th><th>Specs</th>\n<th>Files</th>\n<th>Total hour</th>\n<th class=\"middle\">Active</th>\n<th>Delete Project</th>\n<th>Edit Project</th>\n</tr>\n</thead>\n<tbody>\n";
+            echo "<tr><th class=\"left\" >Project Name</th>\n<th>Show Log</th>\n<th>Enter Log</th><th>Specs</th>\n<th>Files</th>\n<th>Total hour</th>\n<th class=\"middle\">Active</th>\n<th>Edit Project</th>\n</tr>\n</thead>\n<tbody>\n";
 
             foreach ($project as $key => $list){
                 echo "<tr valign='top'>\n";
@@ -74,17 +73,14 @@ if (count($projects)){
 
                 //echo "<td width=\"15%\"><a href=\"../admin/enterlog/".$list['customer_id']."/".$list['id']."\" >".$this->bep_assets->icon('glyphadd16','Enter Log')."</a></td>\n";
 
-                echo "<td width=\"10%\">";
+                echo "<td width=\"15%\">";
                 echo anchor('projects/admin/adminfile/showfile/'.$list['customer_id']."/".$list['id'],$this->bep_assets->icon('box16','Enter File'));
                 echo "</td>\n";
 
                 echo "<td width=\"10%\">".$list['total_hr']."</td>\n";
                 $active =  ($list['active']?'tick':'cross');
 		echo '<td width=\"10%\" >'.$this->bep_assets->icon($active)."</td>\n";
-                echo "<td width=\"10%\" class='listdelete'>";
-                echo anchor('projects/admin/admin/delete_project/'.$list['id'],$this->bep_assets->icon('delete','Delete'), array('class'=>'warnme'));
-                echo "</td>\n";
-                echo "<td width=\"10%\">";
+                echo "<td width=\"15%\">";
                 echo anchor('projects/admin/update_project/'.$list['id'],$this->bep_assets->icon('pencil','Edit Project'));
                 echo "</td>\n";
 

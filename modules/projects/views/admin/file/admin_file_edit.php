@@ -35,7 +35,12 @@ echo "</span>\n</div>\n</li>\n";
 echo "<li>".form_hidden('id',$records['id'])."</li>";
 echo "<li>".form_hidden('customer_id',$name['user_id'])."</li>";
 echo "<li>".form_hidden('project_id',$project['id'])."</li>";
-echo "<li id=\"submitbtn\">".form_submit('submit','Update File')."</li></ul>";
+$submitdata = array(
+    'name'        => 'submit',
+    'class'          => 'submit',
+    'value'       => 'Update File'
+    );
+echo "<li id=\"submitbtn\">".form_submit($submitdata)."</li></ul>";
 echo form_close();
 
 echo "<div class=\"clear\">&nbsp;</div>";

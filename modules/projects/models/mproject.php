@@ -310,11 +310,53 @@ class MProject extends Base_model{
 
 
 
+/*
+ * Used in projects/admin/admin.php
+ */
+         function checkproject($id){
+            $data = array();
+            /*
+            $sql = 'SELECT omc_projects.id, omc_specs.id, omc_logs.id, omc_files.id
+                        FROM omc_projects
+                        LEFT OUTER JOIN omc_specs ON omc_specs.project_id = omc_projects.id
+                        LEFT OUTER JOIN omc_logs   ON omc_logs.project_id = omc_projects.id
+                        LEFT OUTER JOIN omc_files ON omc_files.project_id = omc_projects.id
+                        WHERE omc_projects.id = $id';
+            $query = $this->db->query($sql);
+
+            */
+
+            $this->db->select('omc_files.link, omc_logs.date, omc_specs.spec_desc, omc_projects.project_name');
+            $this->db->from('omc_projects');
+            $this->db->join('omc_specs', 'omc_specs.project_id = omc_projects.id','left outer');
+            $this->db->join('omc_logs', 'omc_logs.project_id = omc_projects.id','left outer');
+            $this->db->join('omc_files', 'omc_files.project_id = omc_projects.id','left outer');
+            $this->db->where('omc_projects.id', $id);
+            $query = $this->db->get();
+              
+
+            
+            if ($query->num_rows() > 0){
+                foreach ($query->result_array() as $row){
+                   $data = $row;
+                }
+            }else{
+                $data = FALSE;
+            }
+            $query->free_result();
+            return $data;
+
+         }
 
 
 
+/*
+ * Used in projects/admin/admin.php
+ */
+         function deleteproject($id){
+            $this->delete('Table',array('id'=>$id));
 
-
+         }
 
 
 

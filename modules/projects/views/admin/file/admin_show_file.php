@@ -59,7 +59,12 @@ $customer_id = $this->uri->segment(5);
 echo "<li>\n".form_hidden('customer_id',$customer_id)."</li>\n";
 $project_id = $this->uri->segment(6);
 echo "<li>\n".form_hidden('project_id',$project_id)."</li>\n";
-echo "<li id=\"submitbtn\">\n".form_submit('submit','Enter File Link')."</li>\n</ul>\n";
+$submitdata = array(
+    'name'        => 'submit',
+    'class'          => 'submit',
+    'value'       => 'Enter File Link'
+    );
+echo "<li id=\"submitbtn\">\n".form_submit($submitdata)."</li>\n</ul>\n";
 echo form_close();
 echo "\n";
 echo "<div class=\"clear\">&nbsp;</div>";

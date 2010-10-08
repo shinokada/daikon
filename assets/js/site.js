@@ -65,7 +65,18 @@ $(document).ready(function(){
             });
     });
 
-    
+    // warn me
+
+       $(".warnme").live('click', function(event){
+            event.preventDefault();
+             var href = $(this).attr("href");
+            jConfirm('Can you confirm this?', 'Confirmation Dialog', function(r) {
+              if( r ) window.location = href;
+
+            // jAlert('Confirmed: ' + href, 'Confirmation Results');
+    });
+
+    });
 
     // add class to a parent of field selected for projects/admin/newproject/
   $(".projectul input, .projectul textarea, .projectul select").focus(function() {

@@ -12,15 +12,18 @@ class Adminfile extends Admin_Controller {
 			$this->load->module_model('auth','User_model');
 			$this->load->language('customer');
 			// Set breadcrumb
-			$this->bep_site->set_crumb('Project File','projects/admin/adminfile/');
+			$this->bep_site->set_crumb('Project File','projects/admin/admin/');
 	}
 
-
+/*
+ * Not using it. when you click a breadcrumb, it will lead to the Project home
+ * Future can be used to show all files according to company
+ */
     function index(){
         // we use the following variables in the view
-        $data['title'] = "Projects Spec Page";
+        $data['title'] = "Projects File Page";
 
-	$data['header'] = "Projects Spec Page";
+	$data['header'] = "Projects File Page";
 
         // get members details where group = 1 which is a member or not 2 which is admin from be_users
 	// this will get user_id and company_name
@@ -28,7 +31,7 @@ class Adminfile extends Admin_Controller {
         $data['customers'] = $this->MProject->getAllCustomersProfile($id);
 
         // get spec details
-        $data['specs'] = $this->MProjectspec->getAllSpecs();
+        $data['files'] = $this->MProjectfile->getAllFiles();
 
 	// This how Bep load views
 	$data['page'] = $this->config->item('backendpro_template_admin') . "file/admin_file_home";

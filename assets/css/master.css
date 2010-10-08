@@ -337,3 +337,6 @@ views/admin/file style
     width: 300px;
 }
 
+.submit{
+    padding: 5px;
+}
