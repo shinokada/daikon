@@ -1,0 +1,339 @@
+* {
+	/* old-style reset here :) */
+	border: 0px;
+	padding: 0px;
+}
+body {
+	font-family: Helvetica;
+	background: white;
+/*	text-align: center;*/
+/*	background: url(../images/body.png) repeat-x;*/
+}
+body h1 {
+	padding-top: 20px;
+	font-size: 26px;
+	color: #335;
+}
+#content td {
+border-bottom:medium none;
+padding:0;
+}
+#calmain table {
+	border-collapse: separate;
+	border: 1px solid #9DABCE;
+	border-width: 0px 0px 1px 1px;
+	margin: 10px auto;
+	font-size: 20px;
+}
+#calmain td, #calmain th {
+	width: 81px;
+	height: 81px;
+	text-align: center;
+	vertical-align: middle;
+	background: url(../images/cells.png);
+	color: #444;
+	position: relative;
+	padding:0;
+}
+#calmain th {
+	height: 30px;
+	font-weight: bold;
+	font-size: 14px;
+}
+#calmain td:hover, #calmain th:hover {
+	background-position: 0px -81px;
+	color: #222;
+}
+#calmain td.date_has_event {
+	background-position: 162px 0px;
+	color: white;
+}
+#calmain td.date_has_event:hover {
+	background-position: 162px -81px;
+}
+#calmain td.padding {
+	background: url(../images/calpad.jpg);
+}
+#calmain td#today {
+	background-position: 81px 0px;
+	color: white;
+}
+#calmain td#today:hover {
+	background-position: 81px -81px;
+}
+#calmain .events {
+	position: relative;
+}
+#calmain .events ul {
+	text-align: left;
+	position: absolute;
+	display: none;
+	z-index: 1000;
+	padding: 15px;
+	background: #E7ECF2 url(../images/popup.png) no-repeat;
+	color: white;
+	border: 1px solid white;
+	font-size: 15px;
+	width: 200px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-border-radius: 3px;
+	list-style: none;
+	color: #444444;
+	-webkit-box-shadow: 0px 8px 8px #333;
+}
+#calmain .events li {
+	padding-bottom: 5px;
+}
+#calmain .events li span {
+	display: block;
+	font-size: 12px;
+	text-align: justify;
+	color: #555;
+}
+#calmain .events li span.title {
+	font-weight: bold;
+	color: #222;
+}
+
+#calmain th a{
+text-decoration:none;
+font-size:120%;
+font-weight:bold;
+color: #000;
+outline-width:0;
+}
+
+#content textarea, #content input{
+	border: 1px solid #ccc;
+}
+/* Calendar */
+
+#calmain{
+	width: 50%;
+	float: left;
+}
+#calleft{
+	float: left;
+	width: 20%;
+	padding: 20px;
+}
+#calright {
+	float: left;
+	width:20%;
+	padding: 20px;
+}
+
+
+/* Project */
+
+.middle td, .middle th { text-align: center; vertical-align: middle; }
+
+.tablesorter .left {text-align: left;}
+
+.companyname {
+    background: url('../icons/asterisk_orange.png') no-repeat 0 0;
+    padding: 0 0 0 25px;
+}
+
+.projectheading{
+    padding:3px;
+    background-color: #777;
+    width: 95%;
+    color: #ffffff;
+}
+
+.message {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	padding: 20px;
+	text-align: center;
+	position: absolute;
+	left: 43%;
+	top: 18%;
+        height: 60px;
+        width: 300px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #8189CF;
+	background-color: #B3B9EF;
+	display:none;}
+
+
+        /*for create new project */
+
+.clear{
+            clear: both;
+}
+
+.projectul{
+    width: 90%;
+}
+
+.projectul .focused{
+    background-color: #EF952C;
+}
+
+.projectul li{
+    float: left;
+    padding: 10px;
+}
+
+.projectul input, .projectul select{
+    margin: 10px 10px 10px 0;
+}
+
+#proname{
+
+}
+
+#proname input{
+ 
+}
+
+#totalli{
+
+
+}
+#activeli{
+
+}
+#createdli{
+
+}
+#noteli{
+    
+}
+
+#submitbtn{
+    clear:both;
+}
+
+#shortli, #noteli{
+ clear:both;
+}
+
+#tablespec td, #tablespec th{
+    padding:10px 0;
+}
+
+/* show_spec style
+*/
+
+.createdli, #completedbyli,  #createdbyli  {
+    width: 90px;
+}
+
+.createdli select, #completedbyli select, #createdbyli select{
+    width:90px;
+}
+
+/* for project/views/admin/spec/admin_show_spec.php
+*/
+
+.listspec{
+
+}
+
+.listspec li{
+    list-style-type: none;
+    float: left;
+    display: block;
+    padding: 5px;
+    text-align: center;
+    width: 50px;
+}
+
+.firstul{
+    clear: both;
+}
+
+.listspec .secondul{
+    clear: both;
+    display: none;
+}
+
+.listspec .listspecdesc{
+width: 300px;
+text-align: left;
+}
+.listspec .listcomp{
+    width: 60px;
+}
+.listspec .listcreatedby{
+
+}
+
+.listspec .listcreateddate{
+    width: 70px;
+}
+
+.listspec .listcompletedby{
+
+}
+
+.listspec .listcompleddate{
+    width: 70px;
+}
+
+.listspec .listactive{
+
+}
+
+.listspec .listdelete{
+
+}
+.listspec .listedit{
+
+}
+
+.listspec .listdetail{
+    width: 870px;
+    text-align: left;
+    
+}
+
+.listdetail div{
+    padding: 10px;
+}
+
+#enterdetailli{
+    clear: both;
+}
+
+#textarea{
+    display: none;
+}
+
+
+.enterdetailli{
+    clear: both;
+}
+
+.listspec .linkli{
+    width: 250px;
+    text-align: left;
+}
+
+.listspec .filedescli{
+    width: 350px;
+    text-align: left;
+}
+
+/****
+views/admin/file style
+**********/
+
+.fileulclass li{
+    float: left;
+}
+
+#linkli{
+    width: 350px;
+}
+
+#filedescli{
+    width: 300px;
+}
+
